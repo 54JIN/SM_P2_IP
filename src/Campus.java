@@ -1,2 +1,9 @@
-package PACKAGE_NAME;public class Campus {
+public enum Campus {
+    NEWBRUNSWICK, NEWARK, CAMDEN;
+
+  /*  public static void main(String[] args)
+    {
+        Campus c = NEWBRUNSWICK;
+        System.out.println(NEWBRUNSWICK.compareTo(CAMDEN));
+    }*/
 }
