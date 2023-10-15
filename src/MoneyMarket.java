@@ -1,5 +1,4 @@
 import java.text.DecimalFormat;
-
 /**
  * @author Vivek Bhadkamkar (vab85)
  * @author Sajin Saju (@ss3652)
@@ -15,24 +14,37 @@ public class MoneyMarket extends Savings
     private static final double NOMONTHLYFEEBALANCE = 2000.00;
     private static final int TOOMANYWITHDRAWALS = 3;
 
+    /**
+     * Constructor for MoneyMarket object, calls super() to use Savings' constructor and declares amount of withdrawals.
+     * @param person Profile of a person with fname, lname, and dob
+     * @param balance Account balance of the person
+     * @param loyalty Boolean value representing if the person is a loyal customer or not
+     * @param withdrawals Amount of withdrawals the person has done on this account
+     */
     public MoneyMarket(Profile person, double balance, boolean loyalty, int withdrawals) //may have to remove loyalty!!!
     {
         super(person, balance, 1);
         this.withdrawal = withdrawals;
     }
 
-
+    /**
+     * Overrides method monthlyInterest from Savings
+     * @return interest rate for the person's Money Market account
+     */
     @Override
     public double monthlyInterest()
     {
         if(this.isLoyal)
         {
-            return HIGHERINTERESTRATE;
+            return HIGHERINTERESTRATE * this.balance;
         }
-        return INTERESTRATE;
+        return INTERESTRATE * this.balance;
 
     }
-
+    /**
+     * Overrides method monthlyFee from Savings
+     * @return monthly fee for Money Market accounts
+     */
     @Override
     public double monthlyFee()
     {
@@ -48,6 +60,11 @@ public class MoneyMarket extends Savings
         return NOMONTHLYFEE;
     }
 
+    /**
+     * Compares two Money Market accounts; calls super().compareTo if the objects are not both Money Market
+     * @param otherAccount the account to be compared.
+     * @return 0 if accounts are equal and Money Market accounts; -1 or 1 if both accounts are Money Market accounts but not equal; or an integer {-3 to 3} to help represent the accounts in alphabetical order.
+     */
     @Override
     public int compareTo(Account otherAccount)
     {
@@ -61,6 +78,11 @@ public class MoneyMarket extends Savings
         }
         return super.compareTo(otherAccount);
     }
+
+    /**
+     * Overrides toString for a Money Market account
+     * @return String form including the holder's profile information, balance, loyalty status, and number of withdrawals
+     */
     @Override
     public String toString()
     {
@@ -78,6 +100,12 @@ public class MoneyMarket extends Savings
         return ("Money Market::Savings::" + this.holder.toString() + "::Balance " + currency.format(this.balance) + "::" +
                 loyalString + "::withdrawal: " + withdrawal);
     }
+
+    /**
+     * Checks if two Money Market accounts are equal
+     * @param mm Money Market account to compare against
+     * @return true if both accounts are the same, false if not
+     */
     public boolean equals(MoneyMarket mm)
     {
         return this.compareTo(mm) == 0;

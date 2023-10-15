@@ -10,7 +10,11 @@ public abstract class Account implements Comparable<Account>
     public abstract double monthlyFee();
     public abstract String toString();
 
-
+    /**
+     * Base constructor for an account object to be called by subclasses
+     * @param person Profile of a person with fname, lname, and dob
+     * @param balance Account balance of the person
+     */
     public Account(Profile person, double balance)
     {
         this.holder = person;
@@ -35,6 +39,12 @@ public abstract class Account implements Comparable<Account>
                      c to mm = 2
                      c to cc = 1
            */
+
+    /**
+     * Comparison method to be called by subclasses when comparing two accounts of unequal type
+     * @param otherAccount the account to be compared.
+     * @return 0 if accounts are equal; -1 or 1 if both accounts are the same type but not equal; or an integer {-3 to 3} to help represent the accounts in alphabetical order.
+     */
     @Override
     public int compareTo(Account otherAccount)
     {
@@ -125,6 +135,11 @@ public abstract class Account implements Comparable<Account>
         return profileComparison;
     }
 
+    /**
+     * Checks if two Account classes are equal
+     * @param acc Account to compare against
+     * @return true if both accounts are the same, false if not
+     */
     public boolean equals(Account acc)
     {
         return this.compareTo(acc) == 0;

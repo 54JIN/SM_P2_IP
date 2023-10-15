@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Collections;
 
 public class TestertoDelete
@@ -14,7 +15,7 @@ public class TestertoDelete
         Savings s2 = new Savings(p1, 200000, 0);
         Savings s3 = new Savings(p1, 200000, 1);
         CollegeChecking cc1 = new CollegeChecking(p1, 200000, Campus.CAMDEN);
-        Checking c1 = new Checking(p1, 200000);
+        Checking c1 = new Checking(p1, 1200);
 
         System.out.println(p1.compareTo(p2)); //should be lesser
 
@@ -46,6 +47,9 @@ public class TestertoDelete
         System.out.println(mm1);
         System.out.println(s1);
 
+        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+        System.out.println(c1.monthlyInterest());
+        System.out.println(currency.format(c1.monthlyInterest()));
 
 
 
