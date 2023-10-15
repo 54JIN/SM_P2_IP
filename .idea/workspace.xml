@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="023f9754-868f-4545-b47c-5be6ae6efcf5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checking.java" afterDir="false" />
@@ -135,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696703120662</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Basically everything finished except for AccountDatabase class, Left a class called TestertoDelete.java that shows comparison tests w/different classes (Checking &gt; CollegeChecking &gt; MoneyMarket &gt; Savings) in sorted order">
+      <option name="closed" value="true" />
+      <created>1697330547992</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697330547992</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

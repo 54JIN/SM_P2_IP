@@ -30,10 +30,17 @@ public class Profile implements Comparable<Profile>
 
     }
 
+
    public boolean equals(Profile profile)
     {
         return (this.fname.equals(profile.fname) && this.lname.equals(profile.lname)
                 && this.dob.equals(profile.dob));
+    }
+
+    @Override
+    public String toString()
+    {
+        return (fname +  " " + lname + " " + dob.toString());
     }
 
   /*  public static void main (String[] args)

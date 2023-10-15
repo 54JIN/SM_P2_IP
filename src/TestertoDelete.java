@@ -39,6 +39,16 @@ public class TestertoDelete
         System.out.println(containsTest(c1, accounts)); //true
         System.out.println(containsTest(s2, accounts)); //false
 
+        System.out.println(mm1.equals(s1));
+        System.out.println(mm1.equals(s2));
+        System.out.println(cc1);
+        System.out.println(c1);
+        System.out.println(mm1);
+        System.out.println(s1);
+
+
+
+
 
 
     }

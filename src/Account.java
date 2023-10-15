@@ -8,6 +8,7 @@ public abstract class Account implements Comparable<Account>
     protected double balance;
     public abstract double monthlyInterest();
     public abstract double monthlyFee();
+    public abstract String toString();
 
 
     public Account(Profile person, double balance)
@@ -128,11 +129,5 @@ public abstract class Account implements Comparable<Account>
     {
         return this.compareTo(acc) == 0;
     }
-
-
-
-
-
-
 
 }

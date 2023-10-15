@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 /**
  * @author Vivek Bhadkamkar (vab85)
  * @author Sajin Saju (@ss3652)
@@ -27,6 +29,14 @@ public class Checking extends Account
            return NOMONTHLYFEE;
         }
         return MONTHLYFEE;
+    }
+
+    @Override
+    public String toString()
+    {
+        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+
+        return ("Checking::" + this.holder.toString() + "::Balance " + currency.format(this.balance));
     }
 
     public boolean equals(Checking c)

@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 /**
  * @author Vivek Bhadkamkar (vab85)
  * @author Sajin Saju (@ss3652)
@@ -58,6 +60,23 @@ public class MoneyMarket extends Savings
             }
         }
         return super.compareTo(otherAccount);
+    }
+    @Override
+    public String toString()
+    {
+        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+        String loyalString;
+        if(isLoyal)
+        {
+            loyalString = "is loyal";
+        }
+        else
+        {
+            loyalString = "is not loyal";
+        }
+
+        return ("Money Market::Savings::" + this.holder.toString() + "::Balance " + currency.format(this.balance) + "::" +
+                loyalString + "::withdrawal: " + withdrawal);
     }
     public boolean equals(MoneyMarket mm)
     {

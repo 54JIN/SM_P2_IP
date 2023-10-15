@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 /**
  * @author Vivek Bhadkamkar (vab85)
  * @author Sajin Saju (@ss3652)
@@ -43,4 +45,13 @@ public class CollegeChecking extends Checking
     {
         return this.compareTo(cc) == 0;
     }
+    @Override
+    public String toString()
+    {
+        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+
+        return ("College Checking::" + this.holder.toString() + "::Balance " + currency.format(this.balance) + "::" + this.campus);
+    }
+
+
 }
