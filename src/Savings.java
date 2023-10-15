@@ -50,4 +50,9 @@ public class Savings extends Account
         //If balance and profile are not equal return account compareTo method
             return super.compareTo(otherAccount);
     }
+
+    public boolean equals(Savings s)
+    {
+        return this.compareTo(s) == 0;
+    }
 }

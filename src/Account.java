@@ -15,6 +15,25 @@ public abstract class Account implements Comparable<Account>
         this.holder = person;
         this.balance = balance;
     }
+    /*
+                 C > CC > MM > S
+                 Comparisons:
+                     savings to cc = -2
+                     savings to mm = -1
+                     savings to c = -3
+
+                     cc to savings = 2
+                     cc to mm = 1
+                     cc to c = -1
+
+                     mm to savings = 1
+                     mm to cc = -1
+                     mm to c = -2
+
+                     c to savings = 3
+                     c to mm = 2
+                     c to cc = 1
+           */
     @Override
     public int compareTo(Account otherAccount)
     {
@@ -22,25 +41,6 @@ public abstract class Account implements Comparable<Account>
 
         if(this.getClass() != otherAccount.getClass()) //If classes are not the same return -2 (change later to -1)
         {
-            /*
-                   C > CC > MM > S
-                   Comparisons:
-                       savings to cc = -2
-                       savings to mm = -1
-                       savings to c = -3
-
-                       cc to savings = 2
-                       cc to mm = 1
-                       cc to c = -1
-
-                       mm to savings = 1
-                       mm to cc = -1
-                       mm to c = -2
-
-                       c to savings = 3
-                       c to mm = 2
-                       c to cc = 1
-             */
             if(this.getClass() == Savings.class || otherAccount.getClass() == Savings.class)
             {
                 if(this.getClass() == Savings.class)
@@ -116,40 +116,6 @@ public abstract class Account implements Comparable<Account>
                         }
                     }
                 }
-            /*if(this.getClass() == Checking.class || otherAccount.getClass() == Checking.class)
-            {
-                if(this.getClass() == Checking.class)
-                {
-                    if(otherAccount.getClass() == Savings.class)
-                    {
-                        return 3;
-                    }
-                    if(otherAccount.getClass() == MoneyMarket.class)
-                    {
-                        return 2;
-                    }
-                    if(otherAccount.getClass() == CollegeChecking.class)
-                    {
-                        return 1;
-                    }
-                }
-                if(otherAccount.getClass() == Checking.class)
-                {
-                    if(this.getClass() == Savings.class)
-                    {
-                        return -3;
-                    }
-                    if(this.getClass() == MoneyMarket.class)
-                    {
-                        return -2;
-                    }
-                    if(this.getClass() == CollegeChecking.class)
-                    {
-                        return -1;
-                    }
-                }
-            }*/
-
         }
         if(profileComparison == 0) //if profile matches, compare by balance
         {
@@ -157,6 +123,13 @@ public abstract class Account implements Comparable<Account>
         }
         return profileComparison;
     }
+
+    public boolean equals(Account acc)
+    {
+        return this.compareTo(acc) == 0;
+    }
+
+
 
 
 

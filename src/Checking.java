@@ -29,4 +29,9 @@ public class Checking extends Account
         return MONTHLYFEE;
     }
 
+    public boolean equals(Checking c)
+    {
+        return this.compareTo(c) == 0;
+    }
+
 }

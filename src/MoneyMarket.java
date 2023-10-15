@@ -59,4 +59,8 @@ public class MoneyMarket extends Savings
         }
         return super.compareTo(otherAccount);
     }
+    public boolean equals(MoneyMarket mm)
+    {
+        return this.compareTo(mm) == 0;
+    }
 }

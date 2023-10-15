@@ -38,4 +38,9 @@ public class CollegeChecking extends Checking
         }
         return super.compareTo(otherAccount);
     }
+
+    public boolean equals(CollegeChecking cc)
+    {
+        return this.compareTo(cc) == 0;
+    }
 }

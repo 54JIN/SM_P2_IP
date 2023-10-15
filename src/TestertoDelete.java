@@ -4,7 +4,9 @@ public class TestertoDelete
 {
     public static void main(String[] args)
     {
-        Profile p1 = new Profile ("Jimmy ", "James", "9/16/2016");
+        Profile p1 = new Profile ("George ", "Carlos", "9/16/2016");
+        Profile p2 = new Profile ("Jimmy ", "Doe", "9/16/2016");
+
         MoneyMarket mm1 = new MoneyMarket(p1, 200000, true, 1);
         MoneyMarket mm2 = new MoneyMarket(p1, 200000, true, 1);
         MoneyMarket mm3 = new MoneyMarket(p1, 300000, true, 1);
@@ -13,6 +15,8 @@ public class TestertoDelete
         Savings s3 = new Savings(p1, 200000, 1);
         CollegeChecking cc1 = new CollegeChecking(p1, 200000, Campus.CAMDEN);
         Checking c1 = new Checking(p1, 200000);
+
+        System.out.println(p1.compareTo(p2)); //should be lesser
 
 
         System.out.println(mm1.compareTo(mm2)); //equal
@@ -34,8 +38,6 @@ public class TestertoDelete
         System.out.println(containsTest(mm1, accounts)); //true
         System.out.println(containsTest(c1, accounts)); //true
         System.out.println(containsTest(s2, accounts)); //false
-
-
 
 
 

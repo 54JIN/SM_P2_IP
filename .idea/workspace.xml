@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="023f9754-868f-4545-b47c-5be6ae6efcf5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccountDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccountDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountDatabaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Campus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Campus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CollegeChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CollegeChecking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MoneyMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoneyMarket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Savings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Savings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestertoDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestertoDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,22 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "master",
-    "onboarding.tips.debug.path": "C:/Users/Witt-Lugger/IdeaProjects/rubank assignment 2/src/Main.java",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Witt-Lugger/IdeaProjects/rubank assignment 2/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -69,7 +64,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Profile">
+  <component name="RunManager" selected="Application.TestertoDelete">
     <configuration name="Profile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Profile" />
       <module name="rubank" />
@@ -113,23 +108,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="rubank" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="rubank" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Profile" />
         <item itemvalue="Application.TestertoDelete" />
+        <item itemvalue="Application.Profile" />
         <item itemvalue="JUnit.DateTest" />
         <item itemvalue="JUnit.DateTest.greaterThan29DaysInFebruary" />
         <item itemvalue="JUnit.DateTest.invalidDayTest2" />
@@ -145,6 +127,19 @@
       <option name="presentableId" value="Default" />
       <updated>1696450387054</updated>
     </task>
+    <task id="LOCAL-00001" summary="Basically everything finished except for AccountDatabase class, Left a class called TestertoDelete.java that shows comparison tests w/different classes (Checking &gt; CollegeChecking &gt; MoneyMarket &gt; Savings) in sorted order">
+      <option name="closed" value="true" />
+      <created>1696703120662</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696703120662</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Basically everything finished except for AccountDatabase class, Left a class called TestertoDelete.java that shows comparison tests w/different classes (Checking &gt; CollegeChecking &gt; MoneyMarket &gt; Savings) in sorted order" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basically everything finished except for AccountDatabase class, Left a class called TestertoDelete.java that shows comparison tests w/different classes (Checking &gt; CollegeChecking &gt; MoneyMarket &gt; Savings) in sorted order" />
   </component>
 </project>
