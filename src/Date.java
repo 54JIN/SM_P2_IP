@@ -81,8 +81,40 @@ public class Date implements Comparable<Date>
         //System.out.println(this.month + "/" + this.day + "/" + this.year); //Check if it gets the correct values.
 
     }
-
-
+    public boolean underAge(){
+        Calendar today = Calendar.getInstance();
+        if(today.get(Calendar.YEAR) - this.year > 16){
+            return true;
+        }
+        if(today.get(Calendar.YEAR) - this.year == 16){
+            if(this.month < (today.get(Calendar.MONTH) + 1)){
+                return true;
+            }
+            else if(this.month == (today.get(Calendar.MONTH) + 1)){
+                if(this.day <= today.get(Calendar.DAY_OF_MONTH)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean overAge(){
+        Calendar today = Calendar.getInstance();
+        if(today.get(Calendar.YEAR) - this.year > 24){
+            return true;
+        }
+        if(today.get(Calendar.YEAR) - this.year == 24){
+            if(this.month < (today.get(Calendar.MONTH) + 1)){
+                return true;
+            }
+            else if(this.month == (today.get(Calendar.MONTH) + 1)){
+                if(this.day <= today.get(Calendar.DAY_OF_MONTH)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     /**
      * Checks if a given date is valid
      * @return true or false depending on whether the date is valid or not.

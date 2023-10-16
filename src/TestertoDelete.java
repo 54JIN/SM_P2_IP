@@ -8,9 +8,9 @@ public class TestertoDelete
         Profile p1 = new Profile ("George ", "Carlos", "9/16/2016");
         Profile p2 = new Profile ("Jimmy ", "Doe", "9/16/2016");
 
-        MoneyMarket mm1 = new MoneyMarket(p1, 200000, true, 1);
-        MoneyMarket mm2 = new MoneyMarket(p1, 200000, true, 1);
-        MoneyMarket mm3 = new MoneyMarket(p1, 300000, true, 1);
+        MoneyMarket mm1 = new MoneyMarket(p1, 200000, 1);
+        MoneyMarket mm2 = new MoneyMarket(p1, 200000, 1);
+        MoneyMarket mm3 = new MoneyMarket(p1, 300000, 1);
         Savings s1 = new Savings(p1, 200000, 1);
         Savings s2 = new Savings(p1, 200000, 0);
         Savings s3 = new Savings(p1, 200000, 1);

@@ -21,7 +21,7 @@ public class MoneyMarket extends Savings
      * @param loyalty Boolean value representing if the person is a loyal customer or not
      * @param withdrawals Amount of withdrawals the person has done on this account
      */
-    public MoneyMarket(Profile person, double balance, boolean loyalty, int withdrawals) //may have to remove loyalty!!!
+    public MoneyMarket(Profile person, double balance, int withdrawals) //may have to remove loyalty!!!
     {
         super(person, balance, 1);
         this.withdrawal = withdrawals;
@@ -57,7 +57,7 @@ public class MoneyMarket extends Savings
 
             return (MONTHLYFEE + WITHDRAWALTAX);
         }
-        return NOMONTHLYFEE;
+        return MONTHLYFEE;
     }
 
     /**

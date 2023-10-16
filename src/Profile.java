@@ -18,7 +18,12 @@ public class Profile implements Comparable<Profile>
     {
         this.fname = fname;
         this.lname = lname;
-        this.dob = new Date(dob);
+        try{
+            this.dob = new Date(dob);
+        }
+        catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
@@ -49,8 +54,11 @@ public class Profile implements Comparable<Profile>
      */
    public boolean equals(Profile profile)
     {
-        return (this.fname.equals(profile.fname) && this.lname.equals(profile.lname)
-                && this.dob.equals(profile.dob));
+        String fullName1 = this.fname + " " + this.lname;
+        String fullName2 = profile.fname + " " + profile.lname;
+        return (fullName1.compareToIgnoreCase(fullName2) == 0 && this.dob.compareTo(profile.dob) == 0);
+        // return (this.fname.equals(profile.fname) && this.lname.equals(profile.lname)
+        //         && this.dob.equals(profile.dob));
     }
 
     /**

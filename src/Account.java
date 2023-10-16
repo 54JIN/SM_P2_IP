@@ -8,7 +8,7 @@ public abstract class Account implements Comparable<Account>
     protected double balance;
     public abstract double monthlyInterest();
     public abstract double monthlyFee();
-    public abstract String toString();
+    public abstract String toString();//What is it for?
 
     /**
      * Base constructor for an account object to be called by subclasses
