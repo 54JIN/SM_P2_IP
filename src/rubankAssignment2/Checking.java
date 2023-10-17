@@ -1,3 +1,5 @@
+package rubankAssignment2;
+
 import java.text.DecimalFormat;
 
 /**
@@ -21,6 +23,7 @@ public class Checking extends Account
     {
         super(person, bal);
     }
+
 
     /**
      * Overrides abstract method monthlyInterest from Account
@@ -52,7 +55,7 @@ public class Checking extends Account
     @Override
     public String toString()
     {
-        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+        DecimalFormat currency= new DecimalFormat("$#,##0.00");
 
         return ("Checking::" + this.holder.toString() + "::Balance " + currency.format(this.balance));
     }
@@ -64,6 +67,10 @@ public class Checking extends Account
      */
     public boolean equals(Checking c)
     {
+        if(this.holder.equals(c.holder))
+        {
+            return true;
+        }
         return this.compareTo(c) == 0;
     }
 

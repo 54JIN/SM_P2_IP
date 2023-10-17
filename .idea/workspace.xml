@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="023f9754-868f-4545-b47c-5be6ae6efcf5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rubankAssignment2/RunProject2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CollegeChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CollegeChecking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoneyMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoneyMarket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Savings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Savings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestertoDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestertoDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/AccountDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/AccountDatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Campus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/Campus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/Checking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CollegeChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/CollegeChecking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/DateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MoneyMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/MoneyMarket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Savings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/Savings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestertoDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/TestertoDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rubankAssignment2/TransactionManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="p2" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -47,32 +60,42 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Witt-Lugger/IdeaProjects/rubank assignment 2/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Witt-Lugger\IdeaProjects\rubank assignment 2\src\rubankAssignment2" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestertoDelete">
-    <configuration name="Profile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Profile" />
+  <component name="RunManager" selected="Application.RunProject2">
+    <configuration name="RunProject2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rubankAssignment2.RunProject2" />
       <module name="rubank" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rubankAssignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="TestertoDelete" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestertoDelete" />
+      <option name="MAIN_CLASS_NAME" value="rubankAssignment2.TestertoDelete" />
       <module name="rubank" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -80,18 +103,24 @@
     </configuration>
     <configuration name="DateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rubank" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DateTest" />
+      <option name="PACKAGE_NAME" value="rubankAssignment2" />
+      <option name="MAIN_CLASS_NAME" value="rubankAssignment2.DateTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DateTest.greaterThan29DaysInFebruary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DateTest.futureDOBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rubank" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DateTest" />
-      <option name="METHOD_NAME" value="greaterThan29DaysInFebruary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rubankAssignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="rubankAssignment2" />
+      <option name="MAIN_CLASS_NAME" value="rubankAssignment2.DateTest" />
+      <option name="METHOD_NAME" value="futureDOBTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,8 +128,8 @@
     </configuration>
     <configuration name="DateTest.invalidDayTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rubank" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DateTest" />
+      <option name="PACKAGE_NAME" value="rubankAssignment2" />
+      <option name="MAIN_CLASS_NAME" value="rubankAssignment2.DateTest" />
       <option name="METHOD_NAME" value="invalidDayTest2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -109,10 +138,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RunProject2" />
         <item itemvalue="Application.TestertoDelete" />
-        <item itemvalue="Application.Profile" />
         <item itemvalue="JUnit.DateTest" />
-        <item itemvalue="JUnit.DateTest.greaterThan29DaysInFebruary" />
+        <item itemvalue="JUnit.DateTest.futureDOBTest" />
         <item itemvalue="JUnit.DateTest.invalidDayTest2" />
       </list>
     </recent_temporary>
@@ -126,36 +155,16 @@
       <option name="presentableId" value="Default" />
       <updated>1696450387054</updated>
     </task>
-    <task id="LOCAL-00001" summary="Basically everything finished except for AccountDatabase class, Left a class called TestertoDelete.java that shows comparison tests w/different classes (Checking &gt; CollegeChecking &gt; MoneyMarket &gt; Savings) in sorted order">
-      <option name="closed" value="true" />
-      <created>1696703120662</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1696703120662</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Basically everything finished except for AccountDatabase class, Left a class called TestertoDelete.java that shows comparison tests w/different classes (Checking &gt; CollegeChecking &gt; MoneyMarket &gt; Savings) in sorted order">
-      <option name="closed" value="true" />
-      <created>1697330547992</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1697330547992</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added override equals() and toString() methods to everything">
-      <option name="closed" value="true" />
-      <created>1697331716093</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1697331716093</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Basically everything finished except for AccountDatabase class, Left a class called TestertoDelete.java that shows comparison tests w/different classes (Checking &gt; CollegeChecking &gt; MoneyMarket &gt; Savings) in sorted order" />
-    <MESSAGE value="Added override equals() and toString() methods to everything" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added override equals() and toString() methods to everything" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

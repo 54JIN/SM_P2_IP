@@ -1,4 +1,7 @@
+package rubankAssignment2;
+
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.Calendar;
 
 class DateTest {
     /**
@@ -92,12 +95,14 @@ class DateTest {
         assertFalse(d.isValid());
     }
     /**
-     * Tests an invalid year given someone's birthdate cannot be in the future
+     * Tests an invalid year given someone's birthdate cannot be in the future or on current date
      */
     @org.junit.jupiter.api.Test
-    void futureDOBTest()
+    void currentOrFutureDOBTest()
     {
-        Date d = new Date("10/7/2023");
+        Calendar today = Calendar.getInstance();
+        Date d = new Date((today.get(Calendar.MONTH)+1), today.get(Calendar.DAY_OF_MONTH), today.get(Calendar.YEAR));
+        //Date d = new Date("10/16/2023");
         assertFalse(d.isValid());
     }
     /**

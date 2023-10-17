@@ -1,3 +1,5 @@
+package rubankAssignment2;
+
 import java.text.DecimalFormat;
 /**
  * @author Vivek Bhadkamkar (vab85)
@@ -18,10 +20,9 @@ public class MoneyMarket extends Savings
      * Constructor for MoneyMarket object, calls super() to use Savings' constructor and declares amount of withdrawals.
      * @param person Profile of a person with fname, lname, and dob
      * @param balance Account balance of the person
-     * @param loyalty Boolean value representing if the person is a loyal customer or not
      * @param withdrawals Amount of withdrawals the person has done on this account
      */
-    public MoneyMarket(Profile person, double balance, boolean loyalty, int withdrawals) //may have to remove loyalty!!!
+    public MoneyMarket(Profile person, double balance, int withdrawals) //may have to remove loyalty!!!
     {
         super(person, balance, 1);
         this.withdrawal = withdrawals;
@@ -57,7 +58,7 @@ public class MoneyMarket extends Savings
 
             return (MONTHLYFEE + WITHDRAWALTAX);
         }
-        return NOMONTHLYFEE;
+        return MONTHLYFEE;
     }
 
     /**
@@ -78,15 +79,31 @@ public class MoneyMarket extends Savings
         }
         return super.compareTo(otherAccount);
     }
+    public void resetWithdrawals()
+    {
+        this.withdrawal = 0;
+    }
+    public void addWithdrawals()
+    {
+        this.withdrawal++;
+    }
+    public void removeLoyalty()
+    {
+        this.isLoyal = false;
+    }
+    public void addLoyalty()
+    {
+        this.isLoyal = true;
+    }
 
     /**
      * Overrides toString for a Money Market account
      * @return String form including the holder's profile information, balance, loyalty status, and number of withdrawals
      */
     @Override
-    public String toString()
+    public String toString() //CHANGE MM TOSTRING TO NOT HAVE ANYTHING WHEN USER IS NOT LOYAL
     {
-        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+        DecimalFormat currency= new DecimalFormat("$#,##0.00");
         String loyalString;
         if(isLoyal)
         {
@@ -94,7 +111,7 @@ public class MoneyMarket extends Savings
         }
         else
         {
-            loyalString = "is not loyal";
+            loyalString = "";
         }
 
         return ("Money Market::Savings::" + this.holder.toString() + "::Balance " + currency.format(this.balance) + "::" +

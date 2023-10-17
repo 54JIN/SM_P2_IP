@@ -1,3 +1,5 @@
+package rubankAssignment2;
+
 import java.text.DecimalFormat;
 
 /**
@@ -67,10 +69,10 @@ public class CollegeChecking extends Checking
      * @param cc College Checking account to compare against
      * @return true if both accounts are the same, false if not
      */
-    public boolean equals(CollegeChecking cc)
+    /*public boolean equals(CollegeChecking cc)
     {
         return this.compareTo(cc) == 0;
-    }
+    }*/
 
     /**
      * Overrides toString for a College Checking account
@@ -79,7 +81,7 @@ public class CollegeChecking extends Checking
     @Override
     public String toString()
     {
-        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+        DecimalFormat currency= new DecimalFormat("$#,##0.00");
 
         return ("College Checking::" + this.holder.toString() + "::Balance " + currency.format(this.balance) + "::" + this.campus);
     }

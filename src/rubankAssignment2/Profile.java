@@ -1,3 +1,5 @@
+package rubankAssignment2;
+
 /**
  * @author Vivek Bhadkamkar (vab85)
  * @author Sajin Saju (@ss3652)
@@ -30,15 +32,20 @@ public class Profile implements Comparable<Profile>
     public int compareTo(Profile profile)
     {
         int dateComparison = this.dob.compareTo(profile.dob);
-        String fullName1 = this.fname + " " + this.lname; //combine into full names
-        String fullName2 = profile.fname + " " + profile.lname;
-        int nameComparison = fullName1.compareTo(fullName2);
+        /*String fullName1 = this.fname + " " + this.lname; //combine into full names
+        String fullName2 = profile.fname + " " + profile.lname;*/
+        int lnameComparison = this.lname.compareTo(profile.lname);
+        int fnameComparison = this.fname.compareTo(profile.fname);
 
-        if(nameComparison == 0) //if names are the same, compare by dob
+        if(lnameComparison == 0) //if names are the same, compare by fname
         {
-            return dateComparison;
+            if(fnameComparison == 0) //if first names are the same, compare by dob
+            {
+                return dateComparison;
+            }
+            return fnameComparison;
         }
-        return nameComparison;
+        return lnameComparison;
 
     }
 
@@ -49,8 +56,9 @@ public class Profile implements Comparable<Profile>
      */
    public boolean equals(Profile profile)
     {
-        return (this.fname.equals(profile.fname) && this.lname.equals(profile.lname)
-                && this.dob.equals(profile.dob));
+        String fullName1 = this.fname + " " + this.lname;
+        String fullName2 = profile.fname + " " + profile.lname;
+        return (fullName1.compareToIgnoreCase(fullName2) == 0 && this.dob.compareTo(profile.dob) == 0);
     }
 
     /**

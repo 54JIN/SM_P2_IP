@@ -1,3 +1,5 @@
+package rubankAssignment2;
+
 import java.util.Calendar;
 /**
  * Creates Date with year, month, and day and provides method isValid() to check if the date is valid
@@ -89,19 +91,16 @@ public class Date implements Comparable<Date>
      */
     public boolean isValid()
     {
-
             boolean isLeapYear = isLeapYear(this.year);
             boolean isRegMonth = isRegMonth(this.month);
             Calendar today = Calendar.getInstance();
-
-
         // check invalid year, check invalid month, check invalid day, check invalid day in february,
 
             if(this.day > REGMONTHLENGTH || this.month > NUMMONTHSINYEAR || this.month <= 0 || this.day <= 0 || this.year < 1900) //Check if invalid date at all
             {
                 return false;
             }
-            else if(this.year > today.get(Calendar.YEAR) || (this.year == today.get(Calendar.YEAR) && this.month > ((today.get(Calendar.MONTH) + 1) + 1)) || (this.year == today.get(Calendar.YEAR) && this.month == (today.get(Calendar.MONTH) + 1) && this.day > today.get(Calendar.DAY_OF_MONTH)))
+            else if(this.year > today.get(Calendar.YEAR) || (this.year == today.get(Calendar.YEAR) && this.month > ((today.get(Calendar.MONTH) + 1) + 1)) || (this.year == today.get(Calendar.YEAR) && this.month == (today.get(Calendar.MONTH) + 1) && this.day >= today.get(Calendar.DAY_OF_MONTH)))
             {
                     return false;
             }
@@ -199,6 +198,40 @@ public class Date implements Comparable<Date>
                 else return 0;
             }
         }
+    }
+    public boolean underAge(){
+        Calendar today = Calendar.getInstance();
+        if(today.get(Calendar.YEAR) - this.year > 16){
+            return true;
+        }
+        if(today.get(Calendar.YEAR) - this.year == 16){
+            if(this.month < (today.get(Calendar.MONTH) + 1)){
+                return true;
+            }
+            else if(this.month == (today.get(Calendar.MONTH) + 1)){
+                if(this.day <= today.get(Calendar.DAY_OF_MONTH)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean overAge(){
+        Calendar today = Calendar.getInstance();
+        if(today.get(Calendar.YEAR) - this.year > 24){
+            return true;
+        }
+        if(today.get(Calendar.YEAR) - this.year == 24){
+            if(this.month < (today.get(Calendar.MONTH) + 1)){
+                return true;
+            }
+            else if(this.month == (today.get(Calendar.MONTH) + 1)){
+                if(this.day <= today.get(Calendar.DAY_OF_MONTH)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     /**
      * Formats date values into a string

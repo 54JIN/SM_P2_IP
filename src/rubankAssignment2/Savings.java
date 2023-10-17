@@ -1,3 +1,5 @@
+package rubankAssignment2;
+
 import java.text.DecimalFormat;
 
 /**
@@ -60,7 +62,7 @@ public class Savings extends Account
     @Override
     public String toString()
     {
-        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+        DecimalFormat currency= new DecimalFormat("$#,##0.00");
         String loyalString;
         if(isLoyal)
         {
@@ -68,7 +70,7 @@ public class Savings extends Account
         }
         else
         {
-            loyalString = "is not loyal";
+            loyalString = "";
         }
 
         return ("Savings::" + this.holder.toString() + "::Balance " + currency.format(this.balance) + "::" +
