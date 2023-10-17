@@ -1,4 +1,4 @@
-package rubankAssignment2;
+// package rubankAssignment2;
 
 import java.text.DecimalFormat;
 
@@ -73,8 +73,7 @@ public class Savings extends Account
             loyalString = "";
         }
 
-        return ("Savings::" + this.holder.toString() + "::Balance " + currency.format(this.balance) + "::" +
-                loyalString);
+        return ("Savings::" + this.holder.toString() + "::Balance " + currency.format(this.balance) + (isLoyal? ("::" + loyalString): ""));
     }
 
     /**

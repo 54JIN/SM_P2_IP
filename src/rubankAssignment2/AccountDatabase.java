@@ -1,4 +1,4 @@
-package rubankAssignment2;
+// package rubankAssignment2;
 
 import java.text.DecimalFormat;
 
@@ -52,7 +52,7 @@ public class AccountDatabase
             {
                 if(accounts[i] != null)
                 {
-                    if (accounts[i].getClass() == Checking.class || accounts[i].getClass() == CollegeChecking.class) {
+                    if ((accounts[i].getClass() == Checking.class || accounts[i].getClass() == CollegeChecking.class) && (account.getClass() == CollegeChecking.class || account.getClass() == Checking.class)) {
                         if (((Checking) accounts[i]).equals((Checking) account)) {
                             return true;
                         }
@@ -196,11 +196,16 @@ public class AccountDatabase
         {
             for(int i = 0; i < accounts.length; i++)
             {
-                if(accounts[i].equals(account))
+                if(accounts[i] != null && accounts[i].equals(account))
                 {
-                    accounts[i].balance -= account.balance;
+                    if(accounts[i].balance - account.balance < 0){
+                        return false;
+                    }
+                    else{
+                        accounts[i].balance -= account.balance;
+                    }
                 }
-                if(accounts[i].getClass() == MoneyMarket.class)
+                if(accounts[i] != null && accounts[i].getClass() == MoneyMarket.class)
                 {
                    ((MoneyMarket) accounts[i]).addWithdrawals();
                     if(accounts[i].balance < 2000)
@@ -217,7 +222,7 @@ public class AccountDatabase
     {
         if(accounts != null){
             for(int i = 0; i < accounts.length; i++){
-                if(accounts[i].compareTo(account) == 0){
+                if(accounts[i] != null && accounts[i].compareTo(account) == 0){
                     accounts[i].balance += account.balance;
                     if(accounts[i].getClass() == MoneyMarket.class && accounts[i].balance > 2000)
                     {

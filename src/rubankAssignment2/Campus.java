@@ -1,7 +1,7 @@
-package rubankAssignment2;
+// package rubankAssignment2;
 
 public enum Campus {
-    NEWBRUNSWICK, NEWARK, CAMDEN;
+    NEW_BRUNSWICK, NEWARK, CAMDEN;
 
   /*  public static void main(String[] args)
     {

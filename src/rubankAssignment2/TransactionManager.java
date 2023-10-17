@@ -1,4 +1,4 @@
-package rubankAssignment2;
+// package rubankAssignment2;
 
 import java.util.Calendar;
 import java.util.InputMismatchException;
@@ -42,31 +42,224 @@ public class TransactionManager {
                         activeDatabase.printUpdatedBalance();
                     }
                     else if(commands[0].equals("C")){
-                        //Work in progress
+                        if(commands.length == 5){
+                            Calendar today = Calendar.getInstance();
+                            Date tempD = new Date(commands[4]);
+                            Date tempTD = new Date((today.get(Calendar.MONTH)+1)+ "/" + today.get(Calendar.DAY_OF_MONTH) + "/" + today.get(Calendar.YEAR));
+                            if(tempD.compareTo(tempTD) == 1 || tempD.compareTo(tempTD) == 0){
+                                throw new InputMismatchException("DOB invalid: "+ commands[4] + " cannot be today or a future day.");
+                            }
+                            if(!tempD.isValid()){
+                                throw new InputMismatchException("DOB invalid: "+ commands[4] + " not a valid calendar date!");
+                            }
+                            if(!tempD.underAge()){
+                                throw new InputMismatchException("DOB invalid: "+ commands[4] + " under 16.");
+                            }
+                            Profile tempP = new Profile(commands[2], commands[3], commands[4]);
+                            if(commands[1].equals("C")){
+                                Checking tempC = new Checking(tempP, 0);
+                                if(activeDatabase.contains(tempC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + "is not in the database.");
+                                }
+                                else{
+                                    activeDatabase.close(tempC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + "has been closed.");
+                                }
+                            }
+                            else if(commands[1].equals("MM")){
+                                MoneyMarket tempC = new MoneyMarket(tempP, 0, 0);
+                                if(activeDatabase.contains(tempC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(MM) " + "is not in the database.");
+                                }
+                                else{
+                                    activeDatabase.close(tempC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(MM) " + "has been closed.");
+                                }
+                            }
+                            else if(commands[1].equals("CC")){
+                                if(tempD.overAge()){
+                                    throw new InputMismatchException("DOB invalid: "+ commands[4] + " over 24.");
+                                }
+                                CollegeChecking tempCC = new CollegeChecking(tempP, 0, Campus.NEW_BRUNSWICK);
+                                if(activeDatabase.contains(tempCC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(CC) " + "is not in the database.");
+                                }
+                                else{
+                                    activeDatabase.close(tempCC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(CC) " + "has been closed.");
+                                }
+                            }
+                            else if(commands[1].equals("S")){
+                                Savings tempS = new Savings(tempP, 0, 1);
+                                if(activeDatabase.contains(tempS) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(S) " + "is not in the database.");
+                                }
+                                else{
+                                    activeDatabase.close(tempS);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(S) " + "has been closed.");
+                                }
+                            }
+                            else{
+                                throw new NullPointerException("Invalid command!");
+                            }
+                        }
+                        else{
+                            throw new NoSuchElementException("Missing data for closing an account.");
+                        }
                     }
                     else if(commands[0].equals("D")) {
-                        //Work in progress
-                        Calendar today = Calendar.getInstance();
-                        Date tempD = new Date(commands[4]);
-                        Date tempTD = new Date((today.get(Calendar.MONTH) + 1) + "/" + today.get(Calendar.DAY_OF_MONTH) + "/" + today.get(Calendar.YEAR));
-                        if (tempD.compareTo(tempTD) > 0 || tempD.compareTo(tempTD) == 0) {
-                            throw new InputMismatchException("DOB invalid: " + commands[4] + " cannot be today or a future day.");
+                        if(commands.length == 6){
+                            //Work in progress
+                            Calendar today = Calendar.getInstance();
+                            Date tempD = new Date(commands[4]);
+                            Date tempTD = new Date((today.get(Calendar.MONTH) + 1) + "/" + today.get(Calendar.DAY_OF_MONTH) + "/" + today.get(Calendar.YEAR));
+                            if (tempD.compareTo(tempTD) > 0 || tempD.compareTo(tempTD) == 0) {
+                                throw new InputMismatchException("DOB invalid: " + commands[4] + " cannot be today or a future day.");
+                            }
+                            if (!tempD.isValid()) {
+                                throw new InputMismatchException("DOB invalid: " + commands[4] + " not a valid calendar date!");
+                            }
+                            if (!tempD.underAge()) {
+                                throw new InputMismatchException("DOB invalid: " + commands[4] + " under 16.");
+                            }
+                            double deposit;
+                            try {
+                                deposit = Double.parseDouble(commands[5]);
+                            } catch (NumberFormatException e) {
+                                throw new NumberFormatException("Not a valid amount.");
+                            }
+                            if (deposit < 1) {
+                                throw new InputMismatchException("Deposit - amount cannot be 0 or negative.");
+                            }
+                            Profile tempP = new Profile(commands[2], commands[3], commands[4]);
+                            if(commands[1].equals("C")){
+                                Checking tempC = new Checking(tempP, deposit);
+                                if(activeDatabase.contains(tempC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + "is not in the database.");
+                                }
+                                else{
+                                    activeDatabase.deposit(tempC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + "Deposit - balance updated.");
+                                }
+                            }
+                            else if(commands[1].equals("MM")){
+                                MoneyMarket tempC = new MoneyMarket(tempP, deposit, 0);
+                                if(activeDatabase.contains(tempC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(MM) " + "is not in the database.");
+                                }
+                                else{
+                                    activeDatabase.deposit(tempC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(MM) " + "Deposit - balance updated.");
+                                }
+                            }
+                            else if(commands[1].equals("CC")){
+                                if(tempD.overAge()){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(CC) " + "is not in the database.");
+                                }
+                                CollegeChecking tempCC = new CollegeChecking(tempP, deposit, Campus.NEW_BRUNSWICK);
+                                if(activeDatabase.contains(tempCC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(CC) " + "is not in the database.");
+                                }
+                                else{
+                                    activeDatabase.deposit(tempCC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(CC) " + "Deposit - balance updated.");
+                                }
+                            }
+                            else if(commands[1].equals("S")){
+                                Savings tempS = new Savings(tempP, deposit, 1);
+                                if(activeDatabase.contains(tempS) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(S) " + "is not in the database.");
+                                }
+                                else{
+                                    activeDatabase.deposit(tempS);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(S) " + "Deposit - balance updated.");
+                                }
+                            }
+                            else{
+                                throw new NullPointerException("Invalid command!");
+                            }
                         }
-                        if (!tempD.isValid()) {
-                            throw new InputMismatchException("DOB invalid: " + commands[4] + " not a valid calendar date!");
+                        else{
+                            throw new NoSuchElementException("Missing data for depositing an account.");
                         }
-                        if (!tempD.underAge()) {
-                            throw new InputMismatchException("DOB invalid: " + commands[4] + " under 16.");
+                        
+                    }
+                    else if(commands[0].equals("W")) {
+                        if(commands.length == 6){
+                            //Work in progress
+                            Calendar today = Calendar.getInstance();
+                            Date tempD = new Date(commands[4]);
+                            Date tempTD = new Date((today.get(Calendar.MONTH) + 1) + "/" + today.get(Calendar.DAY_OF_MONTH) + "/" + today.get(Calendar.YEAR));
+                            if (tempD.compareTo(tempTD) > 0 || tempD.compareTo(tempTD) == 0) {
+                                throw new InputMismatchException("DOB invalid: " + commands[4] + " cannot be today or a future day.");
+                            }
+                            if (!tempD.isValid()) {
+                                throw new InputMismatchException("DOB invalid: " + commands[4] + " not a valid calendar date!");
+                            }
+                            if (!tempD.underAge()) {
+                                throw new InputMismatchException("DOB invalid: " + commands[4] + " under 16.");
+                            }
+                            double withdraw;
+                            try {
+                                withdraw = Double.parseDouble(commands[5]);
+                            } catch (NumberFormatException e) {
+                                throw new NumberFormatException("Not a valid amount.");
+                            }
+                            if (withdraw < 1) {
+                                throw new InputMismatchException("Withdraw - amount cannot be 0 or negative.");
+                            }
+                            Profile tempP = new Profile(commands[2], commands[3], commands[4]);
+                            if(commands[1].equals("C")){
+                                Checking tempC = new Checking(tempP, withdraw);
+                                if(activeDatabase.contains(tempC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + "is not in the database.");
+                                }
+                                else{
+                                    boolean result = activeDatabase.withdraw(tempC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + (result? "Withdraw - balance updated.": "Withdraw - insufficient fund."));
+                                }
+                            }
+                            else if(commands[1].equals("MM")){
+                                MoneyMarket tempC = new MoneyMarket(tempP, withdraw, 0);
+                                if(activeDatabase.contains(tempC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(MM) " + "is not in the database.");
+                                }
+                                else{
+                                    boolean result = activeDatabase.withdraw(tempC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(MM) " + (result? "Withdraw - balance updated.": "Withdraw - insufficient fund."));
+                                }
+                            }
+                            else if(commands[1].equals("CC")){
+                                if(tempD.overAge()){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(CC) " + "is not in the database.");
+                                }
+                                CollegeChecking tempCC = new CollegeChecking(tempP, withdraw, Campus.NEW_BRUNSWICK);
+                                if(activeDatabase.contains(tempCC) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(CC) " + "is not in the database.");
+                                }
+                                else{
+                                    boolean result = activeDatabase.withdraw(tempCC);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(CC) " + (result? "Withdraw - balance updated.": "Withdraw - insufficient fund."));
+                                }
+                            }
+                            else if(commands[1].equals("S")){
+                                Savings tempS = new Savings(tempP, withdraw, 1);
+                                if(activeDatabase.contains(tempS) == false){
+                                    throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(S) " + "is not in the database.");
+                                }
+                                else{
+                                    boolean result = activeDatabase.withdraw(tempS);
+                                    System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(S) " + (result? "Withdraw - balance updated.": "Withdraw - insufficient fund."));
+                                }
+                            }
+                            else{
+                                throw new NullPointerException("Invalid command!");
+                            }
                         }
-                        double deposit;
-                        try {
-                            deposit = Double.parseDouble(commands[5]);
-                        } catch (NumberFormatException e) {
-                            throw new NumberFormatException("Not a valid amount.");
+                        else{
+                            throw new NoSuchElementException("Missing data for withdrawing an account.");
                         }
-                        if (deposit < 1) {
-                            throw new InputMismatchException("Deposit - amount cannot be 0 or negative.");
-                        }
+                        
                     }
                     else if(commands[0].equals("O")){
                         if((commands.length == 6 || commands.length == 7)){
@@ -99,9 +292,6 @@ public class TransactionManager {
                                     if(activeDatabase.contains(tempC)){
                                         throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + "is already in the database.");
                                     }
-                                    else if(activeDatabase.contains(tempC)){
-                                        throw new InputMismatchException(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + "is already in the database.");
-                                    }
                                     else{
                                         activeDatabase.open(tempC);
                                         System.out.println(commands[2] + " " + commands[3] + " " + commands[4] + "(C) " + "opened.");
@@ -132,7 +322,7 @@ public class TransactionManager {
                                     }
                                     CollegeChecking tempCC = null;
                                     if(Integer.parseInt(commands[6]) == 0){
-                                        tempCC = new CollegeChecking(tempP, deposit, Campus.NEWBRUNSWICK);
+                                        tempCC = new CollegeChecking(tempP, deposit, Campus.NEW_BRUNSWICK);
                                     }
                                     else if(Integer.parseInt(commands[6]) == 1){
                                         tempCC = new CollegeChecking(tempP, deposit, Campus.NEWARK);
